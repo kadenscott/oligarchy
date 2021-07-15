@@ -1,5 +1,7 @@
 package dev.kscott.oligarchy.server;
 
+import com.mongodb.lang.NonNull;
+
 /**
  * The possible types of a server.
  */
@@ -9,15 +11,26 @@ public enum ServerType {
      * <p>
      * Example: test server, survival, etc.
      */
-    GENERIC,
+    GENERIC(""),
 
     /**
      * Represents the type of a lobby server.
      */
-    LOBBY,
+    LOBBY("17"),
 
     /**
      * Represents the type of a Bonk server.
      */
-    BONK
+    BONK(""),
+
+    /**
+     * Represents the type of a proxy server.
+     */
+    PROXY("16");
+
+    private final @NonNull String eggId;
+
+    ServerType(final @NonNull String eggId) {
+        this.eggId = eggId;
+    }
 }

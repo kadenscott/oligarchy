@@ -9,6 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://repo.mattmalec.com/repository/releases/")
 }
 
 dependencies {
@@ -16,7 +17,11 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("de.gesellix:docker-client:2021-02-20T21-57-11")
+    implementation("com.github.docker-java:docker-java-core:3.2.11")
+    implementation("com.github.docker-java:docker-java-transport-zerodep:3.2.11")
+
+    implementation("com.mattmalec:Pterodactyl4J:2.BETA_50")
+    implementation("io.lettuce:lettuce-core:6.1.4.RELEASE")
 }
 
 tasks.withType<JavaCompile> {
