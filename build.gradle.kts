@@ -15,7 +15,7 @@ repositories {
 dependencies {
     compileOnly("org.codehaus.groovy:groovy-all:3.0.8")
 
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+//    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.github.docker-java:docker-java-core:3.2.11")
     implementation("com.github.docker-java:docker-java-transport-zerodep:3.2.11")

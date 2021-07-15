@@ -1,9 +1,12 @@
 package dev.kscott.oligarchy.server;
 
-import com.mongodb.lang.NonNull;
+import java.io.Serializable;
 
 /**
  * Holds data for the server.
  */
-public record ServerInfo(@NonNull String id, int port, @NonNull ServerType type) {
+public record ServerInfo(String id,
+                         String name,
+                         ServerType type,
+                         int port) implements Serializable {
 }

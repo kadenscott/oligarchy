@@ -1,8 +1,6 @@
 package dev.kscott.oligarchy;
 
-import com.mattmalec.pterodactyl4j.PteroBuilder;
-import com.mattmalec.pterodactyl4j.application.entities.PteroApplication;
-import com.mongodb.lang.NonNull;
+import dev.kscott.oligarchy.server.ServerService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +12,13 @@ public class OligarchyApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(OligarchyApplication.class, args);
+    }
+
+    @Bean
+    public CommandLineRunner docker(final ApplicationContext ctx) {
+        return args -> {
+            final ServerService serverService = ctx.getBean(ServerService.class);
+        };
     }
 
 }

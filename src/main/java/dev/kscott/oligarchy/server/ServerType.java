@@ -1,7 +1,5 @@
 package dev.kscott.oligarchy.server;
 
-import com.mongodb.lang.NonNull;
-
 /**
  * The possible types of a server.
  */
@@ -28,9 +26,33 @@ public enum ServerType {
      */
     PROXY("16");
 
-    private final @NonNull String eggId;
+    private final String eggId;
 
-    ServerType(final @NonNull String eggId) {
+    ServerType(final String eggId) {
         this.eggId = eggId;
+    }
+
+    public String eggId() {
+        return this.eggId;
+    }
+
+    /**
+     * Returns the server type with the id.
+     * <p>
+     * If {@code eggId} is empty (null, ""), this will return {@link ServerType#GENERIC}.
+     *
+     * @param eggId the egg id
+     * @return the type
+     */
+    public static ServerType findByEggId(final String eggId) {
+        if (eggId.equals("")) return GENERIC;
+
+        for (final ServerType type : values()) {
+            if (type.eggId.equals(eggId)) {
+                return type;
+            }
+        }
+
+        return GENERIC;
     }
 }
