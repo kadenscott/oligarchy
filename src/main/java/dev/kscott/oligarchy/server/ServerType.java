@@ -14,7 +14,7 @@ public enum ServerType {
     /**
      * Represents the type of a lobby server.
      */
-    LOBBY("17"),
+    LOBBY("16"),
 
     /**
      * Represents the type of a Bonk server.
@@ -24,7 +24,7 @@ public enum ServerType {
     /**
      * Represents the type of a proxy server.
      */
-    PROXY("16");
+    PROXY("17");
 
     private final String eggId;
 
